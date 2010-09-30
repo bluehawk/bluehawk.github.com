@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div id="post">
+	
+	<h1 class="title">{{ page.title }}<br/>
+	<small>written by
+		{% if page.author %}
+			<span class="author">{{ page.author }}</span>
+		{% else %}
+			<span class="author">anonymous</span>
+		{% endif %}
+		on <span class="date">{{ page.date | date_to_string }}</span>
+		{% if page.categories.size > 0 %}
+			with category
+			{% for cat in page.categories %}
+				<a href="{{site.baseurl}}/categories/{{cat}}">{{ cat }}</a>{% if forloop.last == false %}&nbsp;,{% endif %}
+			{% endfor %}
+		{% endif %}
+		{% if page.tags.size > 0 %}
+			tagged as 
+			{% for tag in page.tags %}
+				<a href="{{site.baseurl}}/tags/{{tag}}">{{ tag }}</a>{% if forloop.last == false %}&nbsp;,{% endif %}
+			{% endfor %}
+		{% endif %}
+	</small>
+	</h1>
+	
+	
+	
+{{ content }}
+</div>
+
+<div id="related">
+	<h2>Related Posts</h2>
+	<ul class="posts">
+	{% for post in site.related_posts limit:3 %}
+		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+	</ul>
+</div>

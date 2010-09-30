@@ -1,0 +1,282 @@
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { zoom: 1; }
+
+html {
+/*	background:url(bg.png) repeat top center;*/
+}
+/*
+ Line height = 24px;
+*/
+body {
+	color:#555;
+	font:14px/1.5 Helvetica,Arial;
+}
+
+p, ul {
+	margin:1.5em 0;
+}
+
+.note {
+	background:#eee url('../img/lightbulb_48.png') no-repeat 1em center;
+	padding:1.5em 1.5em 1.5em 4.5em;
+	border-radius:10px;
+}
+
+ul, ol {
+	margin-left:1.5em
+}
+
+ul ul, ul ol, ol ol, ol ul {
+	margin-top:0;
+	margin-bottom:0;
+}
+
+a {
+	color:#3E7B9A;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#3e7c9c;
+	text-decoration:underline;
+}
+
+code {
+	color:#6BAA3D;
+}
+
+pre {
+	background:#eee;
+	border-radius:10px;
+	padding:1.5em;
+	font-size:0.9em;
+	margin-bottom:1.65em;
+	overflow:auto;
+}
+
+table {
+	background:#eee;
+	border-left: 1px solid #CCC;
+	border-top: 1px solid #CCC;
+	margin-bottom:1.5em;
+}
+
+table td, table th {
+	padding:0.2em 0.8em;
+	border-right: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+
+table th {
+	background: #ddd;
+}
+
+table tr:nth-child(even) {
+	background: #fff;
+}
+
+h1 {
+	font-size:2.2em;
+	line-height:0.681;
+	margin:0.681em 0;
+}
+
+h2 {
+	font-size:1.5em;
+	line-height:1;
+	margin:1em 0;
+}
+
+h3 {
+	font-size:1.2em;
+	line-height:1.25;
+	margin:1.25em 0;
+}
+
+h4 {
+	margin:1.5em 0;
+}
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small { font-size: 0.8em; font-weight: normal; color: #444; }
+
+h1 small { font-size: 0.6em; }
+
+h1 a.permalink,
+h2 a.permalink,
+h3 a.permalink,
+h4 a.permalink,
+h5 a.permalink,
+h6 a.permalink {
+	font-size:12px;
+	margin-left:1em;
+	font-weight:normal;
+	display:none;
+}
+
+h1:hover a.permalink,
+h2:hover a.permalink,
+h3:hover a.permalink,
+h4:hover a.permalink,
+h5:hover a.permalink,
+h6:hover a.permalink {
+	display:inline;
+}
+
+#main img {
+	padding:1em;
+	outline:1px solid #999;
+}
+
+
+ul.posts {
+	list-style:none;
+}
+
+ul.posts li a {
+	font-weight:bold;
+	padding-left:5px;
+}
+
+ul.posts li span.date {
+	width:120px;
+	display:inline-block;
+	text-align:right;
+	padding-right:5px;
+}
+
+ul.posts li span.author {
+	color:#888;
+}
+
+.title small {
+	font-size:0.5em;
+	color:#888;
+}
+
+.title span.author, .title span.date, .title span.tags, .title span.category {
+	color:#333;
+}
+
+
+/* layout stuff */
+
+#header {
+	background:#85da4c url('../img/header.png') bottom left repeat-x scroll;
+	padding:20px 20px 0;
+}
+
+#nav {
+	background:url('../img/breadcrumbs.png') top left repeat-x scroll;
+	padding:10px 20px;
+}
+
+#nav .container {
+	margin:0 auto;
+}
+
+#nav ul {
+	float:left;
+	margin:0;
+}
+
+#nav li {
+	display:inline-block;
+	margin-right:.6em;
+	float:left;
+}
+
+#nav a {
+	font-weight:bold;
+}
+
+#nav li:not(:first-child):before {
+	content:'» ';
+	padding-right:.3em;
+}
+
+#footer {
+	margin:0 auto;
+	padding:0 20px;
+	width:1060px;
+	margin-bottom:20px;
+}
+
+#footer p {
+	margin:0;
+	padding:1.5em 30px;
+	background:#eee;
+	border-radius:10px;
+	text-align:right;
+}
+
+#body {
+	padding:0 20px;
+}
+
+.container {
+	width:1060px;
+	margin:20px auto;
+}
+
+#main {
+	float:left;
+	width:800px;
+}
+
+#side {
+	border-left:2px solid #eee;
+	float:right;
+	margin:0 0 0 20px;
+	padding:0 20px;
+	width:198px;
+}
+	#menu ul , #menu ol{ list-style-type:none; margin: 0; padding: 0;}
+		#menu ul li, #menu ol li { margin:0; padding: 0; background:url('../img/arrows.png') -80px -1px no-repeat scroll; padding-left:12px; position:relative; }
+		#menu ul li.toggle-close, #menu ol li.toggle-close{ background-position: -22px -22px; }
+		#menu ul li.toggle-open, #menu ol li.toggle-open { background-position: -2px -42px; }
+		#menu ul li a.menu-toggle, #menu ol li a.menu-toggle { width:14px; height:18px; position:absolute; left:0px; text-decoration:none; cursor:pointer;}
+		#menu ul li a.current, #menu ol li a.current {font-weight:bold;}
+		
+	#menu li span { cursor:pointer; }
+
+#header .container {
+	margin:0 auto 0;
+	position:relative;
+	padding:0 0 20px 0;
+}
+
+#mode {
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+
+#mode a {
+	background:#f3b812 url('../img/orange-tab.png') bottom left repeat-x scroll;
+	border:2px solid #fff;
+	border-bottom:none;
+	color:#fff;
+	padding:2px 15px;
+	border-top-left-radius:10px;
+	-moz-border-radius-topleft:10px;
+	border-top-right-radius:10px;
+	-moz-border-radius-topright:10px;
+	display:block;
+	float:left;
+	margin-right:10px;
+}
+
+#mode a:hover {
+	background:#f3b812 url('../img/orange-tab.png') 10px left repeat-x scroll;
+}
+
+#mode a.current {
+	background:#fff;
+	color:	#555555;
+	font-weight:bold;
+}

@@ -1,0 +1,6 @@
+pygments: true
+
+# Change the dir the individual category files are output to
+category_dir: categories
+# Title to be used when generating the individual category html files prefixed to category name
+category_title_prefix: "Category &raquo; "

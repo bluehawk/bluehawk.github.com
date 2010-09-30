@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>{{ page.title }}</title>
+	<meta name="author" content="{{ page.author }}" />
+	<link type="text/css" href="/css/reset.css" rel="stylesheet" media="screen" /> 
+	<link type="text/css" href="/css/screen.css" rel="stylesheet" media="screen" /> 
+</head>
+<body>
+
+	<div id="header"> 
+		<div class="container clearfix"> 
+			<div id="logo"> 
+				<a href="/"><img src="/img/kohana.png" /></a>
+			</div> 
+		</div>
+	</div>
+	
+	<div id="nav"> 
+		<div class="container clearfix">
+			<ul> 
+				<li><a href="/">Kohana Blog</a></li>
+				{% if page.title != 'Kohana Blog' %}
+				<li>{{ page.title }}</li>
+				{% endif %}
+			</ul> 
+		</div> 
+	</div> 
+	
+	<div id="body" class="container clearfix">
+		
+		<div id="main">
+		{{ content }}
+		</div>
+		
+		<div id="side">
+			<h3> Categories </h3>
+			<ul>
+			{% for tag in site.iterable.categories %}
+			  <li><a href="{{site.baseurl}}/categories/{{tag.name}}">
+				{{ tag.name }}</a></li>
+			{% endfor %}
+			</ul>
+			
+			<h3> Tags </h3>
+			<ul>
+			{% for tag in site.iterable.tags %}
+			  <a style="font-size: {{ tag.posts | size | times:1.5 | plus: 10 }}px;" href="{{site.baseurl}}/tags/{{tag.name}}">
+				{{ tag.name }}</a>{% if forloop.last == false %},&nbsp;{% endif %}
+			{% endfor %}
+			</ul>
+			
+		</div>
+		
+	</div>
+	
+	<div id="footer" style="overflow:hidden;">
+		<p>
+			<span style='float:left'>{{ page.copyright }}</span>
+			Powered by <a href="http://kohanaframework.org/">Kohana</a>
+		</p>
+	</div>
+
+</body>
+</html>
