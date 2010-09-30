@@ -12,7 +12,7 @@ layout: default
 		{% endif %}
 		on <span class="date">{{ page.date | date_to_string }}</span>
 		{% if page.categories.size > 0 %}
-			with category
+			in category
 			{% for cat in page.categories %}
 				<a href="{{site.baseurl}}/categories/{{cat}}">{{ cat }}</a>{% if forloop.last == false %}&nbsp;,{% endif %}
 			{% endfor %}
