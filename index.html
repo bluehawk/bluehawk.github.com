@@ -4,8 +4,7 @@ title: Kohana Blog
 ---
 
 <h2>Kohana Blog</h2>
-<ul class="posts">
-  {% for post in site.posts %}
-	<li><span class="date">{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>{% if post.author %} <span class="author"> by {{ post.author }}</span>{% endif %}</li>
-  {% endfor %}
-</ul>
+
+{% assign post-list = site.posts %}
+{% include post-list.html %}
+

@@ -3,8 +3,6 @@ layout: default
 ---
 
 <h2>{{ site.categories[page.category].size }} posts in category "{{ page.category }}" </h2>
-<ul class="posts">
-{% for post in site.categories[page.category] %}
-	<li><span class="date">{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a>{% if post.author %} <span class="author"> by {{ post.author }}</span>{% endif %}</li>
-{% endfor %}
-</ul>
+
+{% assign post-list = site.categories[page.category] %}
+{% include post-list.html %}
